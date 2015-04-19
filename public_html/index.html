@@ -1,29 +1,19 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge">
-        <meta name=description content="A front-end template that helps you build fast, modern mobile web apps.">
-        <meta name=viewport content="width=device-width, initial-scale=1">
-        <title>Web Starter Kit</title><link rel=manifest href=manifest.json>
-        <meta name=mobile-web-app-capable content=yes>
-        <meta name=application-name content="Web Starter Kit">
-        <link rel=icon sizes=192x192 href=images/touch/chrome-touch-icon-192x192.png>
-        <meta name=apple-mobile-web-app-capable content=yes>
-        <meta name=apple-mobile-web-app-status-bar-style content=black>
-        <meta name=apple-mobile-web-app-title content="Web Starter Kit">
-        <link rel=apple-touch-icon href=images/touch/apple-touch-icon.png>
-        <meta name=msapplication-TileImage content=images/touch/ms-touch-icon-144x144-precomposed.png>
-        <meta name=msapplication-TileColor content=#3372DF><meta name=theme-color content=#3372DF>
-        <link rel=stylesheet href=css/index.css>
+        <!-- https://github.com/WebComponents/webcomponentsjs/# -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.6.0/CustomElements.min.js"></script>
+        <script src="//japont.herokuapp.com/japont.js" async></script>
+        <!-- 変更したいDOMのCSSセレクタをselectorとして指定する -->
+        <!-- 例）h1に適応させたい -->
+        <meta is="web-font" src="IPAexfont/ipaex-mincho.woff" selector="h1"/>
     </head>
     <body>
         <header>
             <h1>Push Demo</h1>
         </header>
         <main>
- <button class="js-push-button" disabled> 
-  Enable Push Messages  
-</button>
+            <h1>あいうえお</h1>
         </main>
         <script src=js/index.js></script>
     </body>
