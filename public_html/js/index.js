@@ -1,5 +1,7 @@
 var isPushEnabled = false;
 
+…
+
 window.addEventListener('load', function() {  
   var pushButton = document.querySelector('.js-push-button');  
   pushButton.addEventListener('click', function() {  
@@ -19,7 +21,6 @@ window.addEventListener('load', function() {
     console.warn('Service workers aren\'t supported in this browser.');  
   }  
 });
-
 // Once the service worker is registered set the initial state  
 function initialiseState() {  
   // Are Notifications supported in the service worker?  
