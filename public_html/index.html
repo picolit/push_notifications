@@ -21,24 +21,9 @@
             <h1>Push Demo</h1>
         </header>
         <main>
-            <div class=js-push-switch-container>
-                <label class="wsk-switch wsk-js-switch wsk-js-ripple-effect" for=enable-push>
-                    <input type=checkbox id=enable-push class="wsk-switch__input js-enable-push" disabled>
-                    <span class=wsk-switch__label>Enable Push Notifications</span>
-                </label>
-            </div>
-            <div class=content-overlap-wrapper>
-                <div class="send-push-options js-send-push-options">
-                    <p class=center>
-                        <button class="xhr-button js-xhr-button wsk-button wsk-js-button wsk-button--colored wsk-js-ripple-effect">Send a Push to GCM via XHR</button></p>
-                    <p class=center>OR</p><p>Copy and paste the following CURL command into your terminal to send a push message to your browser.</p>
-                    <code class="curl-code-example js-curl-code"></code>
-                </div><div class="error-message-container js-error-message-container">
-                    <h1 class="error-title js-error-title"></h1>
-                    <p class="error-message js-error-message"></p>
-                </div>
-            </div>
-            <p class=center>The Weather API is<br><a href="https://www.yahoo.com/?ilc=401" target=_blank><img src=https://poweredby.yahoo.com/purple.png width=134 height=29></a></p>
+ <button class="js-push-button" disabled> 
+  Enable Push Messages  
+</button>
         </main>
         <script src=js/index.js></script>
     </body>
