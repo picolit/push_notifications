@@ -196,6 +196,7 @@ IndexDBWrapperProto.transaction = function(e, s, t) {
  */
 var API_KEY = "AIzaSyB6w3ttGT93bpDaWW88oTC2pcBtH6NUeIw", PUSH_SERVER_URL = "https://picolit.github.io/push_notifications/public_html/index.html";
 window.addEventListener("UIReady", function() {
+    console.log("UIReady");
     var e = document.querySelector(".js-enable-push");
     e.addEventListener("change", function(e) {
         e.target.checked ? subscribeDevice() : unsubscribeDevice()
@@ -216,10 +217,11 @@ window.addEventListener("UIReady", function() {
     var s = this.getPushSwitchElement();
     s.checked = e, this.getWrappedPushSwitch().onChange_()
 }, UIHandler.prototype.setPushSwitchDisabled = function(e) {
-    
+    console.log("UIHandler.prototype.setPushSwitchDisabled");
     var s = this.getPushSwitchElement();
     s.disabled = e, this.getWrappedPushSwitch().onChange_()
 }, UIHandler.prototype.showGCMPushOptions = function(e) {
+    console.log("UIHandler.prototype.showGCMPushOptions");
     var s = this.getSendPushOptionsElement(), t = e ? 1 : 0;
     s.style.opacity = t
 }, window.addEventListener("load", function() {
