@@ -201,18 +201,22 @@ window.addEventListener("UIReady", function() {
         e.target.checked ? subscribeDevice() : unsubscribeDevice()
     }), "serviceWorker" in navigator ? navigator.serviceWorker.register("/service-worker.js", {scope: "./"}).then(initialiseState) : (window.PushDemo.ui.showError("Ooops Service Workers aren't Supported", 'Service Workers aren\'t supported in this browser. For this demo be sure to use <a href="https://www.google.co.uk/chrome/browser/canary.html">Chrome Canary</a> or version 42.'), window.PushDemo.ui.showOnlyError())
 }), UIHandler.prototype.showError = function(e, s) {
+    console.log("UIHandler.prototype.showError");
     var t = document.querySelector(".js-error-message-container"), i = t.querySelector(".js-error-title"), n = t.querySelector(".js-error-message");
     i.innerHTML = e, n.innerHTML = s, t.style.opacity = 1;
     var a = this.getSendPushOptionsElement();
     a.style.display = "none"
 }, UIHandler.prototype.showOnlyError = function() {
+    console.log("UIHandler.prototype.showOnlyError");
     var e = document.querySelector(".js-push-switch-container");
     e.style.display = "none"
 }, UIHandler.prototype.setPushChecked = function(e) {
+    console.log("UIHandler.prototype.setPushChecked");
     console.log("Set Checked State = " + e);
     var s = this.getPushSwitchElement();
     s.checked = e, this.getWrappedPushSwitch().onChange_()
 }, UIHandler.prototype.setPushSwitchDisabled = function(e) {
+    
     var s = this.getPushSwitchElement();
     s.disabled = e, this.getWrappedPushSwitch().onChange_()
 }, UIHandler.prototype.showGCMPushOptions = function(e) {
