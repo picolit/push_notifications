@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>Push Notifications</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/index.css" media="all">
+		<script type="text/javascript" src="js/libs/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+	</head>
+	<body>
+		<div class="js-push-switch-container">
+			<label class="wsk-switch wsk-js-switch wsk-js-ripple-effect wsk-js-ripple-effect--ignore-events is-checked is-upgraded" for="enable-push" data-upgraded=",MaterialItem,MaterialSwitch,MaterialRipple">
+				<input type="checkbox" id="enable-push" class="wsk-switch__input js-enable-push">
+				<span class="wsk-switch__label">Enable Push Notifications</span>
+					<div class="wsk-switch__track"></div>
+					<div class="wsk-switch__thumb">
+						<span class="wsk-switch__focus-helper"></span>
+					</div>
+						<span class="wsk-switch__ripple-container wsk-js-ripple-effect wsk-ripple--center" data-upgraded=",MaterialItem,MaterialRipple">
+						<span class="wsk-ripple" style="width: 96px; height: 96px;"></span>
+						<span class="wsk-item--ripple-container"><span class="wsk-ripple"></span>
+						</span>
+						</span>
+					<span class="wsk-item--ripple-container">
+						<span class="wsk-ripple"></span>
+					</span>
+					<div class="wsk-switch__track"></div>
+					<div class="wsk-switch__thumb">
+						<span class="wsk-switch__focus-helper"></span>
+					</div><span class="wsk-switch__ripple-container wsk-js-ripple-effect wsk-ripple--center" data-upgraded=",MaterialRipple">
+						<span class="wsk-ripple is-animating" style="width: 96px; height: 96px; -webkit-transform: translate(-50%, -50%) translate(24px, 24px); transform: translate(-50%, -50%) translate(24px, 24px); opacity: 0;"></span>
+					</span>
+			</label>
+		</div>
+		<button class="js-push-button" disabled>Enable Push Messages</button>
+	</body>
+</html>
