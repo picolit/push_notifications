@@ -1,5 +1,6 @@
 "use strict";
 function promisifyRequest(e) {
+    console.log("promisifyRequest");
     return new Promise(function(s, t) {
         function i() {
             s(e.result), a()
@@ -20,6 +21,7 @@ function IndexDBWrapper(e, s, t) {
     }
 }
 function onPushSubscription(e) {
+    console.log("onPushSubscription");
     window.PushDemo.ui.showGCMPushOptions(!0), window.PushDemo.ui.setPushSwitchDisabled(!1);
     var s = e.endpoint, t = e.subscriptionId, i = document.querySelector(".js-xhr-button");
     i.addEventListener("click", function() {
@@ -34,6 +36,7 @@ function onPushSubscription(e) {
     a.innerHTML = n
 }
 function subscribeDevice() {
+    console.log("subscribeDevice");
     window.PushDemo.ui.setPushSwitchDisabled(!0), navigator.serviceWorker.ready.then(function(e) {
         e.pushManager.subscribe().then(onPushSubscription)["catch"](function(e) {
             "denied" === Notification.permission ? (window.PushDemo.ui.showError("Ooops Notifications are Blocked", "Unfortunately you just permanently blocked notifications. Please unblock / allow them to switch on push notifications."), window.PushDemo.ui.setPushSwitchDisabled(!0)) : (window.PushDemo.ui.showError("Ooops Push Couldn't Register", '<p>When we tried to get the subscription ID for GCM, something went wrong, not sure why.</p><p>Have you defined "gcm_sender_id" and "gcm_user_visible_only" in the manifest?</p><p>Error message: ' + e.message + "</p>"), window.PushDemo.ui.setPushSwitchDisabled(!1)), window.PushDemo.ui.setPushChecked(!1)
@@ -41,6 +44,7 @@ function subscribeDevice() {
     })
 }
 function unsubscribeDevice() {
+    console.log("unsubscribeDevice");
     window.PushDemo.ui.setPushSwitchDisabled(!0), navigator.serviceWorker.ready.then(function(e) {
         e.pushManager.getSubscription().then(function(e) {
             return e ? void e.unsubscribe().then(function(e) {
@@ -54,6 +58,7 @@ function unsubscribeDevice() {
     })
 }
 function initialiseState() {
+    console.log("initialiseState");
     return "Notification" in window ? "showNotification" in ServiceWorkerRegistration.prototype ? "denied" === Notification.permission ? void window.PushDemo.ui.showError("Ooops Notifications are Blocked", "Unfortunately notifications are permanently blocked. Please unblock / allow them to switch on push notifications.") : "PushManager" in window ? void navigator.serviceWorker.ready.then(function(e) {
         console.log("serviceWorkerRegistration"), e.pushManager.getSubscription().then(function(e) {
             window.PushDemo.ui.setPushSwitchDisabled(!1), e && (window.PushDemo.ui.setPushChecked(!0), onPushSubscription(e))
@@ -63,6 +68,7 @@ function initialiseState() {
     }) : void window.PushDemo.ui.showError("Ooops Push Isn't Supported", '<p>This could be a few things.</p><ol><li>Make sure you are using Chrome Canary / Chrome version 42+</li><li>Make sure you have Experimental Web Platform features enabled in Chrome flags (chrome://flags/#enable-experimental-web-platform-features)</li><li>Make sure you have "gcm_sender_id" and "gcm_user_visible_only" defined in your manifest</li></ol>If both of the above are true, then please message <a href="https://twitter.com/gauntface">@gauntface</a> as the demo is probably broken.') : void window.PushDemo.ui.showError("Ooops Notifications Not Supported", "This is most likely down to the experimental web features not being enabled in chrome://flags or you're using a version of Chrome older than version 42.Showing a notification is required when you receive a push message in Chrome.Checkout chrome://flags/#enable-experimental-web-platform-features") : void window.PushDemo.ui.showError("Ooops Notifications Not Supported", "This is most likely down to the experimental web features not being enabled in chrome://flags. Showing a notification is required when you receive a push message in Chrome.Checkout chrome://flags/#enable-experimental-web-platform-features")
 }
 function UIHandler() {
+    console.log("UIHandler");
     var e = document.querySelector(".js-enable-push"), s = new MaterialSwitch(document.querySelector(".wsk-js-switch")), t = document.querySelector(".js-send-push-options"), i = document.querySelector(".js-xhr-button");
     new MaterialButton(i), this.getPushSwitchElement = function() {
         return e
